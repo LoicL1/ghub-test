@@ -1,0 +1,24 @@
+B[8,8] boolean
+C[8,8] boolean
+while
+pour i 1 à 8
+pour j 1 à 8B[]= faux
+read PX
+read PY
+if px or py is <0 or >8
+  write "possition imposible"
+end if
+endwhile
+
+B[px,py] = vrai
+ READ M
+ if px or py is <0 or >8
+  write "mouvement impossible"
+  ifnot
+	if M=
+	 PB
+	 
+	 0=-1,1
+	 1=1,1
+	 2 = -1,-1
+	 3= -1,-1
