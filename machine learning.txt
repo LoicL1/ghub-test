@@ -1,0 +1,179 @@
+intro
+j de donnee fil rouge
+
+diadets
+used cars 
+
+donnee tabulaire
+
+donnee complexe
+	computer vision
+	NLP
+		tensorboard
+		
+slack
+
+marianne.clausel@univ-lorraine.fr
+
+github
+
+modelisation choix des features id de la tache 
+visualisation 
+taxonomie machine learning 
+communiqué 
+	faire comprendre les limites
+	modélisé
+	expliqué les resultat, visualiser
+	s'adderssé a des decideur 
+
+apprentisage de representation
+clustering
+non deep
+deep learning:
+	vae
+	diffusion
+	
+groupe en category 
+unsupervised
+	classique
+	deep learning
+		graph neural method
+
+kmeans 
+hac
+dbscan
+
+
+
+k-means
+
+
+quantitatif
+
+
+qualicatif
+	robustesse
+	ia de confiance: réponse vrai à x%
+	ia explicable : globale/local
+		eu ai act->2026
+		
+	panage à l'échelle, frugalité
+	efficasité, rapidité
+	
+	
+clustering hierarchique 
+ cahier des charge qualitatif
+ quantitatif 
+ performances
+	metrique
+		externe
+			on compare a un label
+		interne
+			intrinique mesure linométrique
+				variance intra inter
+
+label: category definit a l'avance
+obs predit le label 
+	regression lineaire/logistic
+	methodes d'ensemble:arches
+	deep
+	LLM carte
+donnée tabu
+
+sortie : 0 ou 1
+fonction d'activation
+fixée
+lan,can,van->fonction d'activation s'apprend 
+ensembling 
+brique de base : clasif ou regression
+	on les combine:
+		bagging
+		boosting
+brique de base-> decision tree
+	reseau de neurone
+	
+explicable
+mesure d'importantce 
+result 
+permutation  d'importance 
+ia explicable
+
+
+
+capa de generealisation 
+
+eval formation data scientist
+predicteur naif 
+" tout le monde est malade" 97%perf
+matrice de passition 
+
+
+
+Diabetes_binary,HighBP,HighChol,CholCheck,BMI,Smoker,Stroke,HeartDiseaseorAttack,PhysActivity,Fruits,Veggies,
+HvyAlcoholConsump,AnyHealthcare,NoDocbcCost,GenHlth,MentHlth,PhysHlth,DiffWalk,Sex,Age,Education,Income
+
+Diabetes_binary,HighBP,HighChol,CholCheck,BMI,Smoker,Stroke,HeartDiseaseorAttack,PhysActivity,Fruits,Veggies,
+HvyAlcoholConsump,AnyHealthcare,NoDocbcCost,GenHlth,MentHlth,PhysHlth,DiffWalk,Sex,Age,Education,Income
+
+Diabetes_012,HighBP,HighChol,CholCheck,BMI,Smoker,Stroke,HeartDiseaseorAttack,PhysActivity,Fruits,Veggies,
+HvyAlcoholConsump,AnyHealthcare,NoDocbcCost,GenHlth,MentHlth,PhysHlth,DiffWalk,Sex,Age,Education,Income
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+jeu de donnee
+
+mlp
+resnet
+
+cnn
+rnn
+	
+tranformers
+
+perceptron
+mlp
+cnn
+seq2seq
+
+puissane de calc gpu
+données
+
+wi= pois
+w(0) biais
+sigm fonction d'activation
+
+simple a implementé 
+	block de neurones
+
+fonction d'acti
+
+peceptron = 1 neurones
+
+quest trouvé les poids ie apprendre
+comment: l'optimisation 
+
+perceptron
+x(0)\
+-----O-y
+x(p)/
+
+-> approximation : non
+modèle trop simple
+MLP
+
+
+pytorch 
+foward y = fwrd(x)
+backward ; trouve les poids pour endre l'erreur la plus petites possible 
+
+modele de base + fine tunning 
+pre trained
+compresser: strat de prunning... 
+yolo -> tini yolo
+neural architechture search 
+fine tune + loss choice 
+
+
+serie temp
