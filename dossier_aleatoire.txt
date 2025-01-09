@@ -26,4 +26,4 @@ B[px,py] = vrai
 	 
 for px in len(M):
   if px or py is <0 or 8>
-
+999
