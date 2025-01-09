@@ -1,0 +1,1308 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "62008e08-c658-419b-a474-ff27933ae00d",
+   "metadata": {},
+   "source": [
+    "# Types de base et variables\n",
+    "\n",
+    "Dans ce premier TP, nous allons découvrir les objets les plus\n",
+    "fondamentaux de Python : les **nombres** et les **chaînes de\n",
+    "caractère**. Nous allons également voir comment l’on peut assigner des\n",
+    "objets à des **variables**, afin de réaliser des opérations avec ces\n",
+    "objets.\n",
+    "\n",
+    "## Nombres\n",
+    "\n",
+    "### Types de nombres\n",
+    "\n",
+    "Python propose différents objets de type numérique. Dans ce tutoriel, on\n",
+    "va s’intéresser aux deux types principalement utilisés :\n",
+    "\n",
+    "-   les entiers (type `int` pour *integer*)\n",
+    "\n",
+    "-   les réels (type `float` pour nombres à virgule flottante)\n",
+    "\n",
+    "De manière générale, on utilise la fonction `type` pour imprimer le type\n",
+    "d’un objet Python."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "id": "8b56c8a6",
+   "metadata": {},
+   "source": [
+    "type(3)"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "code",
+   "id": "7a6a66aa",
+   "metadata": {},
+   "source": [
+    "type(3.14)"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "markdown",
+   "id": "874e0f3e-0709-488c-913a-759b921e21aa",
+   "metadata": {},
+   "source": [
+    "Les fonctions `float` et `int` peuvent être utilisées pour passer d’un\n",
+    "type à l’autre."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "id": "72f4dc5e",
+   "metadata": {},
+   "source": [
+    "# Conversion en float\n",
+    "float(3)"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "code",
+   "id": "43a7215e",
+   "metadata": {},
+   "source": [
+    "# Conversion en float\n",
+    "type(float(3))"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "code",
+   "id": "4a8a0323",
+   "metadata": {},
+   "source": [
+    "# Conversion en int\n",
+    "int(3.79)"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "markdown",
+   "id": "75c4c9e6-b753-47c5-90f7-1277b22ab496",
+   "metadata": {},
+   "source": [
+    "Attention à la conversion *float* -\\> *int*, qui tronque la partie\n",
+    "décimale.\n",
+    "\n",
+    "Les *floats* peuvent par ailleurs être écrits en notation scientifique :"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "id": "cf264a24",
+   "metadata": {},
+   "source": [
+    "2e3"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "code",
+   "id": "5288743f",
+   "metadata": {},
+   "source": [
+    "type(2e3)"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d489cb6f-c33f-4f65-8a1f-0b5849420c88",
+   "metadata": {},
+   "source": [
+    "### Opérations arithmétiques de base"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "id": "437df6c6",
+   "metadata": {},
+   "source": [
+    "# Addition\n",
+    "8 + 9"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "code",
+   "id": "dfb38bcd",
+   "metadata": {},
+   "source": [
+    "# Soustraction\n",
+    "5 - 2"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "code",
+   "id": "868f691d",
+   "metadata": {},
+   "source": [
+    "# Multiplication\n",
+    "2 * 6"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "code",
+   "id": "3442a44f",
+   "metadata": {},
+   "source": [
+    "# Division\n",
+    "9 / 4"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "code",
+   "id": "aaa350bc",
+   "metadata": {},
+   "source": [
+    "# Division par 0\n",
+    "3 / 0"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "markdown",
+   "id": "44872aff-4620-4736-b1a9-f0d9851a8c64",
+   "metadata": {},
+   "source": [
+    "La division par 0 produit une erreur. C’était bien sûr prévisible. Mais\n",
+    "il n’est pas rare d’avoir de telles erreurs dans le cadre de calculs\n",
+    "statistiques, notamment avec *NumPy* ou *Pandas*, produisant une erreur\n",
+    "similaire qu’il faut alors débugger.\n",
+    "\n",
+    "> **Debugger une erreur**\n",
+    ">\n",
+    "> Les erreurs de code sont un passage obligatoire et en réalité\n",
+    "> nécessaire de l’apprentissage d’un langage: c’est en debuggant les\n",
+    "> erreurs que notre code produit que l’on apprend à les éviter à\n",
+    "> l’avenir ! Pour ce faire, il est nécessaire de bien les comprendre en\n",
+    "> premier lieu.\n",
+    ">\n",
+    "> L’erreur ci-dessus, liée à la division par 0, a produit un\n",
+    "> `Traceback`, i.e. un log détaillé précisant à quelle étape des\n",
+    "> différentes opérations effectuées par Python s’est produite l’erreur,\n",
+    "> ainsi que le nom de l’erreur (`ZeroDivisionError`) et un descriptif\n",
+    "> (“division by zero”). En l’occurence, l’erreur est simple, le message\n",
+    "> permet donc de comprendre directement le problème. Pour des opérations\n",
+    "> plus compliquées, les noms et messages peuvent être moins évidents…\n",
+    "> mais néanmoins utiles pour comprendre la source de l’erreur - en les\n",
+    "> indiquant dans un moteur de recherche par exemple."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "id": "3b8fa047",
+   "metadata": {},
+   "source": [
+    "# Division euclidienne : quotient\n",
+    "9 // 4"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "code",
+   "id": "c5644ff1",
+   "metadata": {},
+   "source": [
+    "# Division euclidienne : reste\n",
+    "9 % 4"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "code",
+   "id": "5e7129f9",
+   "metadata": {},
+   "source": [
+    "# Puissance\n",
+    "2 ** 5"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "code",
+   "id": "657614f8",
+   "metadata": {},
+   "source": [
+    "# Racine carrée\n",
+    "5 ** 0.5"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "code",
+   "id": "37af2a7f",
+   "metadata": {},
+   "source": [
+    "# Ordre des opérations : convention usuelle\n",
+    "2 + 5 * (10 - 4)"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e6c87897-e487-4f8b-99dd-6e89afbbbbd4",
+   "metadata": {},
+   "source": [
+    "## Chaînes de charactères\n",
+    "\n",
+    "Les chaînes de caractères (ou *strings*) sont utilisées pour stocker de\n",
+    "l’information textuelle. Plus précisément, elles peuvent stocker tout\n",
+    "caractère de type [Unicode](https://fr.wikipedia.org/wiki/Unicode), ce\n",
+    "qui inclut les lettres des différentes langues, mais également la\n",
+    "ponctuation, les chiffres, les smileys, etc.\n",
+    "\n",
+    "Un *string* se définit en mettant l’information entre apostrophes ou\n",
+    "entre guillemets (anglais).\n",
+    "\n",
+    "### Définition"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "id": "1c44ed5a",
+   "metadata": {},
+   "source": [
+    "# Première manière \n",
+    "'mot'"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "code",
+   "id": "c783d9d0",
+   "metadata": {},
+   "source": [
+    "# Deuxième manière\n",
+    "\"ça fonctionne aussi\""
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "code",
+   "id": "cf80b72f",
+   "metadata": {},
+   "source": [
+    "# Mais attention au mélange des deux !\n",
+    "'l'apostrophe, quelle catastrophe'"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d5b49925-515e-406f-8275-2b5273742b65",
+   "metadata": {},
+   "source": [
+    "Erreur de syntaxe : la seconde apostrophe est comprise comme la fin du\n",
+    "*string*, et Python ne sait pas interpréter le reste de la séquence.\n",
+    "\n",
+    "> **Erreurs de syntaxe et exception**\n",
+    ">\n",
+    "> Depuis le début du TP, on a vu plusieurs erreurs produites par le\n",
+    "> code. En pratique, il est important de distinguer deux types d’erreurs\n",
+    "> :\n",
+    ">\n",
+    "> -   les **erreurs de syntaxe**: le code ne respecte pas les règles de\n",
+    ">     syntaxe de Python, comme l’erreur ci-dessus. Le `Traceback`\n",
+    ">     (message d’erreur) indique avec des flèches pointant vers le haut\n",
+    ">     la ligne et le moment où à commencé le problème\n",
+    ">\n",
+    "> -   les **exceptions**: le code est syntaxiquement correct mais\n",
+    ">     produit une erreur lors de son exécution, comme la division par\n",
+    ">     zéro effectuée plus haut.\n",
+    ">\n",
+    "> Pourquoi alors est-il important de distinguer ces deux types d’erreur\n",
+    "> ? Car là où une syntaxe incorrecte génère nécessairement une\n",
+    "> `SyntaxError` et arrête l’exécution du code, une exception peut être\n",
+    "> gérée dans le code. Par exemple, dans le cadre d’un code où l’on\n",
+    "> réaliserait de multiples divisions avec des paramètres multiples, on\n",
+    "> pourrait vouloir faire en sorte qu’une division par zéro ne renvoie\n",
+    "> pas une erreur qui interrompe l’exécution du code, mais une valeur\n",
+    "> arbitraire (infini, valeur manquante…).\n",
+    "\n",
+    "Pour éviter l’erreur de syntaxe, il faut varier les caractères en cas de\n",
+    "besoin :"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "id": "2faa479a",
+   "metadata": {},
+   "source": [
+    "\"l'apostrophe, aucun problème\""
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d6ae945f-f4fd-4145-bc30-b44acffd5f8c",
+   "metadata": {},
+   "source": [
+    "Même chose en sens inverse :"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "id": "cb417309",
+   "metadata": {},
+   "source": [
+    "'les guillemets, \"aucun problème\"'"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "markdown",
+   "id": "71f55e9b-f38e-4f5b-b31a-10e705070a27",
+   "metadata": {},
+   "source": [
+    "### La fonction `print`\n",
+    "\n",
+    "Le travail avec les *strings* est l’occasion de découvrir la très\n",
+    "pratique et très utilisée fonction `print`. Elle affiche simplement\n",
+    "l’argument qu’on lui passe entre parenthèses **et** un retour à la ligne\n",
+    "par défaut."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "id": "481a3c4d",
+   "metadata": {},
+   "source": [
+    "# Affichage de la chaîne \"moi\"\n",
+    "\"moi\""
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "code",
+   "id": "cc1168bd",
+   "metadata": {},
+   "source": [
+    "# Affichage de la chaîne \"moi\" avec print\n",
+    "print(\"moi\")"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "markdown",
+   "id": "36ceca0d-de58-4acc-a9fe-2c1c68bb1905",
+   "metadata": {},
+   "source": [
+    "On a vu jusqu’à maintenant que l’on pouvait simplement exécuter une\n",
+    "cellule pour afficher le contenu d’un *string*. Mais est-ce cela marche\n",
+    "avec plusieurs *strings* ?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "id": "37671a6b",
+   "metadata": {},
+   "source": [
+    "# Qui va être affiché ?\n",
+    "\"moi\"\n",
+    "\"non moi\""
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "markdown",
+   "id": "2e03217d-affb-4520-bc0e-13ae4720b0ee",
+   "metadata": {},
+   "source": [
+    "On voit là un comportement caractéristique des notebooks Jupyter : seule\n",
+    "la dernière valeur renvoyée dans une cellule est affichée. La fonction\n",
+    "`print` permet de s’affranchir de cette limite."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "id": "698bf576",
+   "metadata": {},
+   "source": [
+    "# Et cette fois ?\n",
+    "print(\"moi\")\n",
+    "print(\"moi aussi\")"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3af7ae79-ede3-47c5-b119-1911b7b5cdcd",
+   "metadata": {},
+   "source": [
+    "### Longueur d’une chaîne\n",
+    "\n",
+    "La fonction `len` permet de compter le nombre de caractères d’un\n",
+    "*string*, tous caractères inclus (lettres, chiffres, espaces,\n",
+    "ponctuation…)."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "id": "6837da34",
+   "metadata": {},
+   "source": [
+    "len(\"J'ai 19 charactères\")"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "markdown",
+   "id": "7c13fb30-4b2c-438d-8315-4ce6e4dbd9b2",
+   "metadata": {},
+   "source": [
+    "Le type “caractère” n’existe pas en Python : un caractère seul est\n",
+    "défini comme un *string* de taille 1."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "id": "304cfcc8",
+   "metadata": {},
+   "source": [
+    "print(type(\"a\"))\n",
+    "print(len(\"a\"))"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ccc82181-415e-418f-a110-05c86f5c2785",
+   "metadata": {},
+   "source": [
+    "### Indexation\n",
+    "\n",
+    "En Python, un *string* est une **séquence**, c’est à dire une suite de\n",
+    "caractères dans un ordre spécifique. Par conséquent, chaque caractère\n",
+    "d’un *string* est indexé (Python connaît sa position), et l’on peut\n",
+    "utiliser cet index pour extraire des caractères particuliers, des\n",
+    "sous-chaînes de caractères, etc.\n",
+    "\n",
+    "En Python, on utilise les crochets `[]` pour appeler l’index d’une\n",
+    "séquence. Plus précisément, l’index fonctionne sur le modèle suivant :\n",
+    "`x[a:b:c]` renvoie un *sub-string* du *string* `x` où `a` est la\n",
+    "position du caractère de départ, `b` la position du caractère d’arrivée\n",
+    "plus 1, et `c` le pas de l’indexation. Tout cela sera plus clair avec\n",
+    "les exemples suivants.\n",
+    "\n",
+    "Note importante : **l’indexation commence à 0 en Python**."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "id": "be47020a",
+   "metadata": {},
+   "source": [
+    "\"une séquence que l'on va indexer\""
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "code",
+   "id": "f4972d1e",
+   "metadata": {},
+   "source": [
+    "# Premier élément\n",
+    "\"une séquence que l'on va indexer\"[0]"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "code",
+   "id": "950e0a26",
+   "metadata": {},
+   "source": [
+    "# Deuxième élément\n",
+    "\"une séquence que l'on va indexer\"[1]"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "code",
+   "id": "95404d2f",
+   "metadata": {},
+   "source": [
+    "# Dernier élément\n",
+    "\"une séquence que l'on va indexer\"[-1]"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "code",
+   "id": "d5ef8be3",
+   "metadata": {},
+   "source": [
+    "# Extraire tout à partir d'un certain caractère\n",
+    "\"une séquence que l'on va indexer\"[4:]"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "code",
+   "id": "6414a431",
+   "metadata": {},
+   "source": [
+    "# Extraire tout jusqu'à un certain caractère\n",
+    "\"une séquence que l'on va indexer\"[:12]"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "code",
+   "id": "f49ac4fa",
+   "metadata": {},
+   "source": [
+    "# Extraire un sub-string\n",
+    "\"une séquence que l'on va indexer\"[4:12]"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "code",
+   "id": "c3c226dd",
+   "metadata": {},
+   "source": [
+    "# Extraire tous les 2 caractères, à partir de la 4 ème position\n",
+    "\"une séquence que l'on va indexer\"[4::2]"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "code",
+   "id": "b8691b66",
+   "metadata": {},
+   "source": [
+    "# Inverser une séquence\n",
+    "\"une séquence que l'on va indexer\"[::-1]"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c38a89ef-a419-4c2a-923d-84bffedeee05",
+   "metadata": {},
+   "source": [
+    "A retenir : c’est bien parce qu’un *string* est considéré comme une\n",
+    "séquence par Python que l’on peut l’indexer. Par exemple, indexer un\n",
+    "nombre n’a pas de sens, et renvoie donc une erreur."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "id": "3c081e2e",
+   "metadata": {},
+   "source": [
+    "2[3]"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "markdown",
+   "id": "5083c5a3-70fe-4696-a7ac-b488583b045a",
+   "metadata": {},
+   "source": [
+    "### Quelques propriétés utiles"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "id": "64fd0667",
+   "metadata": {},
+   "source": [
+    "# Concaténation de strings\n",
+    "\"mon adresse est : \" + \"10 rue des Peupliers\""
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "code",
+   "id": "c1410e66",
+   "metadata": {},
+   "source": [
+    "# Répétition\n",
+    "\"echo - \" * 5"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c6c99e08-9c58-469e-8ffc-903c45209986",
+   "metadata": {},
+   "source": [
+    "### Quelques méthodes utiles\n",
+    "\n",
+    "Les différents objets Python ont généralement des **méthodes** dites\n",
+    "*built-in* (standard), qui permettent d’effectuer des opérations de base\n",
+    "à partir de l’objet.\n",
+    "\n",
+    "Nous verrons dans un prochain chapitre en quoi consistent précisément\n",
+    "les méthodes en Python. Pour le moment, on peut retenir que les méthodes\n",
+    "s’utilisent selon le format `objet.methode(parametres)` où les\n",
+    "paramètres sont optionnels."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "id": "56ef1f60",
+   "metadata": {},
+   "source": [
+    "# Mettre en majuscules\n",
+    "\"sequence 850\".upper()"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "code",
+   "id": "425e2126",
+   "metadata": {},
+   "source": [
+    "# Mettre en minuscules\n",
+    "\"sequence 850\".lower()"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "code",
+   "id": "4f59d4b6",
+   "metadata": {},
+   "source": [
+    "# Séparer les mots selon les espaces\n",
+    "\"une séquence    à séparer\".split()"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "code",
+   "id": "13c6a74c",
+   "metadata": {},
+   "source": [
+    "# Séparer les mots selon un caractère arbitraire\n",
+    "\"pratique pour faire des sous-séquences\".split(\"-\")"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "code",
+   "id": "29b0b88d",
+   "metadata": {},
+   "source": [
+    "# Utiliser les strings comme templates\n",
+    "\"mon adresse est : {}\".format(\"10 rue des Peupliers\")"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "markdown",
+   "id": "9a61b4c1-6fe5-4785-9e3d-7f8b80899b40",
+   "metadata": {},
+   "source": [
+    "### Pour aller plus loin avec les *strings*\n",
+    "\n",
+    "Tout ceci n’est qu’un aperçu des innombrables opérations possibles sur\n",
+    "les *strings*. La [documentation\n",
+    "officielle](https://docs.python.org/3/library/stdtypes.html#string-methods)\n",
+    "liste l’ensemble des méthodes *built-in* disponibles. Les exercices du\n",
+    "chapitre et les mini-projets de fin de partie seront l’occasion de\n",
+    "découvrir d’autres utilisations.\n",
+    "\n",
+    "## Variables\n",
+    "\n",
+    "Jusqu’ici, nous avons dû définir à chaque fois notre objet avant de\n",
+    "pouvoir lui appliquer une transformation. Comment faire si l’on veut\n",
+    "réutiliser un objet et lui appliquer plusieurs transformations ? Ou\n",
+    "faire des opérations à partir de différents objets ?\n",
+    "\n",
+    "Pour cela, on va assigner les objets à des variables.\n",
+    "\n",
+    "### Assignation et opérations\n",
+    "\n",
+    "L’assignation se fait suivant le format : `nom_de_la_variable = objet`.\n",
+    "Cela permet ensuite de réaliser des opérations à partir de ces\n",
+    "variables."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "id": "8427a105",
+   "metadata": {},
+   "source": [
+    "x = 5\n",
+    "x"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "code",
+   "id": "a7f61a7c",
+   "metadata": {},
+   "source": [
+    "type(x)"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "code",
+   "id": "131122e7",
+   "metadata": {},
+   "source": [
+    "x + 5"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "code",
+   "id": "7fd4d1cd",
+   "metadata": {},
+   "source": [
+    "y = x + 2*x\n",
+    "y"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "markdown",
+   "id": "09642c2d-d38d-4023-8128-fe40246b4926",
+   "metadata": {},
+   "source": [
+    "Contrairement à d’autres langages de programmation, Python est dit\n",
+    "*dynamiquement* typé : il est possible de réassigner une variable à un\n",
+    "objet de type différent. Cela facilite la lecture et le développement,\n",
+    "mais peut parfois générer des problèmes difficiles à débugger… Il faut\n",
+    "donc toujours bien faire attention que le type de la variable est bien\n",
+    "celui que l’on s’imagine manipuler."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "id": "0e69321e",
+   "metadata": {},
+   "source": [
+    "x = 3\n",
+    "x = \"blabla\"\n",
+    "type(x)"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b5897e0e-3307-409f-921e-6ba298b5e335",
+   "metadata": {},
+   "source": [
+    "Il y a naturellement certaines contraintes sur les opérations selon les\n",
+    "types des objets."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "id": "43dffc54",
+   "metadata": {},
+   "source": [
+    "x = \"test\"\n",
+    "y = 3\n",
+    "x + y"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "markdown",
+   "id": "55a7d791-de53-4b14-98f4-0877e5b161f5",
+   "metadata": {},
+   "source": [
+    "Il est par contre possible d’harmoniser les types en amont :"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "id": "68227fd2",
+   "metadata": {},
+   "source": [
+    "x = \"test\"\n",
+    "y = 3\n",
+    "z = str(y)\n",
+    "x + z"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "markdown",
+   "id": "9c0a3c97-869e-4a8a-9d39-57de729d13cb",
+   "metadata": {},
+   "source": [
+    "### Incrémentation\n",
+    "\n",
+    "Il est fréquent d’utiliser une variable comme un compteur, en\n",
+    "l’incrémentant à chaque fois qu’un évènement donné apparaît par exemple."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "id": "0a8049c6",
+   "metadata": {},
+   "source": [
+    "a = 0\n",
+    "print(a)\n",
+    "a = a +1\n",
+    "print(a)"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ed8117bd-8aa9-4312-9d5d-ba07e5f05813",
+   "metadata": {},
+   "source": [
+    "Cette pratique est tellement fréquente qu’il existe des opérateurs\n",
+    "spéciaux pour les opérations arithmétiques courantes."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "id": "18cf9dbf",
+   "metadata": {},
+   "source": [
+    "a = 0\n",
+    "a += 1\n",
+    "a"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "code",
+   "id": "298085e0",
+   "metadata": {},
+   "source": [
+    "b = 5\n",
+    "b *= 3\n",
+    "b"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "markdown",
+   "id": "850e01d0-2e64-4bd1-9984-703c44678db7",
+   "metadata": {},
+   "source": [
+    "## Exercices\n",
+    "\n",
+    "### Questions de compréhension\n",
+    "\n",
+    "-   Quels sont les différents types de base de Python vus dans ce\n",
+    "    tutoriel ?\n",
+    "\n",
+    "-   Comment convertir un entier en réel et inversement ?\n",
+    "\n",
+    "-   Comment définit-on une chaîne de caractères en Python ?\n",
+    "\n",
+    "-   Qu’est ce qu’un *Traceback* ?\n",
+    "\n",
+    "-   Quelle est la différence entre une erreur de syntaxe et une\n",
+    "    exception ?\n",
+    "\n",
+    "-   A quoi sert la fonction `print` ?\n",
+    "\n",
+    "-   Comment afficher plusieurs valeurs dans une cellule de notebook\n",
+    "    Jupyter ?\n",
+    "\n",
+    "-   A quoi sert la fonction `len` ?\n",
+    "\n",
+    "-   Qu’est-ce qu’une méthode *built-in* et comment la reconnaître ?\n",
+    "\n",
+    "-   A quoi servent les variables ?\n",
+    "\n",
+    "-   Pourquoi dit-on que Python est “*dynamiquement* typé” ?"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f33851b9-a038-4085-af57-14edd1d68842",
+   "metadata": {},
+   "source": [
+    "### Affichage de types de base\n",
+    "\n",
+    "Afficher le type de x lorsque :\n",
+    "\n",
+    "-   x = 3\n",
+    "\n",
+    "-   x = “test”\n",
+    "\n",
+    "-   x = 3.5"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "id": "9e48a539",
+   "metadata": {},
+   "source": [
+    "# Tapez votre réponse dans cette cellule"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "markdown",
+   "id": "7dddd8a2-beaf-4e6e-899b-b836446514b3",
+   "metadata": {},
+   "source": [
+    "### Longueurs de chaînes\n",
+    "\n",
+    "Calculer la somme des longueurs des trois chaînes de caractères\n",
+    "suivantes :\n",
+    "\n",
+    "-   “une première chaîne”\n",
+    "\n",
+    "-   “et une deuxième”\n",
+    "\n",
+    "-   “jamais deux sans trois”"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "id": "a72627f0",
+   "metadata": {},
+   "source": [
+    "# Tapez votre réponse dans cette cellule"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f0d4c27c-0992-4492-9452-fad0e0b9279e",
+   "metadata": {},
+   "source": [
+    "### Formattage des codes postaux\n",
+    "\n",
+    "Quel est le type adapté pour définir un code postal ?\n",
+    "\n",
+    "Essayer de définir les codes postaux suivants au format `int` et au\n",
+    "format `string` :\n",
+    "\n",
+    "-   92120\n",
+    "\n",
+    "-   02350\n",
+    "\n",
+    "Que concluez-vous ?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "id": "d0fd44f2",
+   "metadata": {},
+   "source": [
+    "# Tapez votre réponse dans cette cellule"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b16360a8-eee2-41c6-b258-3b6f79c14b9d",
+   "metadata": {},
+   "source": [
+    "### Comptage de lettres\n",
+    "\n",
+    "Compter le nombre de fois où la lettre e est présente dans la chaîne\n",
+    "suivante : “Je fais un comptage des e.”\n",
+    "\n",
+    "**Indice** : on peut utiliser la méthode *built-in*\n",
+    "[count](https://docs.python.org/fr/3/library/stdtypes.html#str.count)."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "id": "4ad3270d",
+   "metadata": {},
+   "source": [
+    "# Tapez votre réponse dans cette cellule"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "markdown",
+   "id": "465debec-8ec2-4802-9dd4-5f12413af541",
+   "metadata": {},
+   "source": [
+    "### Détection de lettres\n",
+    "\n",
+    "Repérer la première position où la lettre e est présente dans la chaîne\n",
+    "suivante : “Je fais un comptage des e.”\n",
+    "\n",
+    "**Indice** : on peut utiliser la méthode *built-in*\n",
+    "[find](https://docs.python.org/fr/3/library/stdtypes.html#str.find)."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "id": "74e70880",
+   "metadata": {},
+   "source": [
+    "# Tapez votre réponse dans cette cellule"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "markdown",
+   "id": "41434e69-c74f-480c-82a7-e2dc4c165732",
+   "metadata": {},
+   "source": [
+    "### Suppression d’espaces dans une chaîne\n",
+    "\n",
+    "Supprimer les espaces superflus au début et à la fin de la chaîne\n",
+    "suivante :\n",
+    "\n",
+    "**Indice** : on peut utiliser la méthode *built-in*\n",
+    "[strip](https://docs.python.org/fr/3/library/stdtypes.html#str.strip)."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "id": "52b9bfb1",
+   "metadata": {},
+   "source": [
+    "# Tapez votre réponse dans cette cellule\n",
+    "a = \"    Un string très mal formatté.         \""
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "markdown",
+   "id": "31cc85c0-15a9-443b-9383-7e4b2dd0bb90",
+   "metadata": {},
+   "source": [
+    "### Echappement de caractères\n",
+    "\n",
+    "Le caractère `\\` permet d’échapper (neutraliser) un caractère spécial au\n",
+    "sein d’une chaîne de caractères. Trouvez comment ce caractère permet de\n",
+    "résoudre le problème lié à l’utilisation de guillemets (ou\n",
+    "d’apostrophes) dans une chaîne définie par des guillemets (apostrophe).\n",
+    "\n",
+    "**Indice** : des exemples d’utilisation sont disponibles dans la\n",
+    "[documentation\n",
+    "officielle](https://docs.python.org/fr/3.8/reference/lexical_analysis.html#literals)."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "id": "23c8a8e3",
+   "metadata": {},
+   "source": [
+    "# Tapez votre réponse dans cette cellule"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1114527d-3392-4a42-8a0d-e783bc4baf11",
+   "metadata": {},
+   "source": [
+    "### Un premier algorithme\n",
+    "\n",
+    "Réaliser la suite d’opérations suivantes à l’aide des opérateurs\n",
+    "d’incrémentation, et imprimer la valeur finale :\n",
+    "\n",
+    "-   initialiser une variable à 1\n",
+    "\n",
+    "-   lui soustraire 5\n",
+    "\n",
+    "-   la multiplier par 4\n",
+    "\n",
+    "-   lui ajouter 22"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "id": "6b46d6e4",
+   "metadata": {},
+   "source": [
+    "# Tapez votre réponse dans cette cellule"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "markdown",
+   "id": "0d38974f-78cf-434e-a6ef-0c480ecc53f5",
+   "metadata": {},
+   "source": [
+    "### Composition de chaînes de caractères\n",
+    "\n",
+    "Considérons les deux séquences suivantes :\n",
+    "\n",
+    "-   “nous sommes en”\n",
+    "\n",
+    "-   “2024”\n",
+    "\n",
+    "Trouvez à partir du tutoriel deux manières différentes de les utiliser\n",
+    "pour composer la séquence “nous sommes en 2024”.\n",
+    "\n",
+    "**Indice** : l’une des deux méthodes implique de modifier (légèrement)\n",
+    "une des deux séquences."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "id": "7806faed",
+   "metadata": {},
+   "source": [
+    "# Tapez votre réponse dans cette cellule"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "markdown",
+   "id": "255b4b33-0418-4362-b449-0f659124de2a",
+   "metadata": {},
+   "source": [
+    "### Les `f-strings`\n",
+    "\n",
+    "Les `f-strings` sont une forme de *strings* un peu particulière mais\n",
+    "très pratique, qui ont été ajoutés dans la version 3.6 de `Python`. Pour\n",
+    "comprendre leur intérêt, repartons de la solution de l’exercice\n",
+    "précédent, qui illustrait deux manières de composer la chaîne “nous\n",
+    "sommes en 2024”."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "id": "85b3b338",
+   "metadata": {},
+   "source": [
+    "a1 = \"nous sommes en\"\n",
+    "a2 = \"nous sommes en {}\"\n",
+    "b = \"2024\"\n",
+    "\n",
+    "print(a1 + \" \" + b)\n",
+    "print(a2.format(b))"
+   ],
+   "outputs": [],
+   "execution_count": null
+  },
+  {
+   "cell_type": "markdown",
+   "id": "2880094e-3781-4200-a877-9966d4f91402",
+   "metadata": {},
+   "source": [
+    "Ces deux méthodes fonctionnent mais présentent des limites. Réfléchissez\n",
+    "à ce qui se passerait dans les cas suivants, et n’hésitez pas à faire\n",
+    "des tests pour vous en convaincre :\n",
+    "\n",
+    "-   si l’on souhaite injecter via la méthode `format()` une variable qui\n",
+    "    n’est pas un *string* (ex : si “2024” était un entier et non un\n",
+    "    *string*) ?\n",
+    "\n",
+    "-   si l’on souhaite concaténer plusieurs *strings* ensemble ?\n",
+    "\n",
+    "-   si l’on souhaite concaténer plusieurs *strings* ensemble et qu’en\n",
+    "    plus on souhaite injecter les valeurs d’autres variables dans chaque\n",
+    "    partie ?\n",
+    "\n",
+    "En vous inspirant de la [documentation\n",
+    "officielle](https://docs.python.org/fr/3/tutorial/inputoutput.html#formatted-string-literals),\n",
+    "utilisez les `f-strings` pour résoudre ces différents problèmes."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "id": "901f3b7d",
+   "metadata": {},
+   "source": [
+    "# Tapez votre réponse dans cette cellule"
+   ],
+   "outputs": [],
+   "execution_count": null
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.13.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
